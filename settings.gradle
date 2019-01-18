@@ -1,0 +1,3 @@
+rootProject.name = 'vertx_demo'
+include 'server-http'
+include 'server-eb'
