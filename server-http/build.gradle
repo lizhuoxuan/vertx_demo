@@ -3,7 +3,8 @@ apply plugin: 'com.github.johnrengelman.shadow'
 shadowJar {
     classifier = 'fat'
     manifest {
-        attributes 'Main-Verticle': 'HttpMain.groovy'
+        attributes 'Main-Verticle': 'com.xzlzx.HttpMain'
+//        attributes 'Main-Verticle': 'Proxy'
     }
     mergeServiceFiles {
         include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
