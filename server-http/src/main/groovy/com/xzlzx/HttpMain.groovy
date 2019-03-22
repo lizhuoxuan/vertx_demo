@@ -7,12 +7,18 @@ import io.vertx.core.Vertx
 import io.vertx.core.json.JsonObject
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.StaticHandler
+import org.slf4j.bridge.SLF4JBridgeHandler
 
 /**
  * Created by liurui on 2016/11/30.
  */
 @Slf4j
 class HttpMain extends AbstractVerticle {
+
+    static {
+        SLF4JBridgeHandler.removeHandlersForRootLogger()
+        SLF4JBridgeHandler.install()
+    }
 
     static void main(String[] args) {
         Vertx.vertx().deployVerticle(HttpMain.newInstance())
