@@ -5,8 +5,8 @@ allprojects {
 
 subprojects { subproject ->
     ext {
-        vertxVersion = '3.6.2'
-        groovyVersion = '2.5.5'
+        vertxVersion = '3.6.3'
+        groovyVersion = '2.5.6'
         isServer = subproject.name.startsWith('server')
     }
 
@@ -46,12 +46,13 @@ subprojects { subproject ->
 
         compile "joda-time:joda-time:2.10.1"
 
-        if (isServer) {
-            compile "io.vertx:vertx-web:$vertxVersion"
-            compile "io.vertx:vertx-web-client:$vertxVersion"
-            compile "io.vertx:vertx-hazelcast:$vertxVersion"
-
-        }
+        compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+        compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.25'
+        
+        compile "io.vertx:vertx-web:$vertxVersion"
+        compile "io.vertx:vertx-web-client:$vertxVersion"
+        compile "io.vertx:vertx-hazelcast:$vertxVersion"
+        
 
     }
 
